@@ -6,21 +6,37 @@
 }
 
 .progress-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     max-width: 600px;
     margin: 20px auto;
     padding: var(--progress-container-padding);
-    text-align: center;
     background-color: #fff;
     border-radius: var(--progress-bar-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.progress-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .progress-label {
     font-size: var(--progress-text-font-size);
     color: var(--progress-text-color, #333);
-    font-weight: 400;
-    margin-bottom: 10px;
-    display: block;
+    font-weight: 500;
     letter-spacing: 0.5px;
 }
 
@@ -30,7 +46,7 @@
     border-radius: var(--progress-bar-radius);
     background-color: var(--progress-bar-bg, #f1f1f1);
     appearance: none;
-    transition: width 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 .progress-bar::-webkit-progress-bar {
@@ -41,37 +57,68 @@
 .progress-bar::-webkit-progress-value {
     background-color: var(--progress-bar-fill, #6c7ae0);
     border-radius: var(--progress-bar-radius);
+    transition: all 0.4s ease;
 }
 
 .progress-bar::-moz-progress-bar {
     background-color: var(--progress-bar-fill, #6c7ae0);
     border-radius: var(--progress-bar-radius);
+    transition: all 0.4s ease;
 }
 
 .progress-percentage {
-    margin-top: 8px;
     font-size: var(--progress-text-font-size);
     color: var(--progress-text-color, #333);
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 0.5px;
 }
 
+/* Estados de la barra de progreso */
 .progress-bar-complete {
-    --progress-bar-bg: #e0f7fa;
+    --progress-bar-bg: #e8f5e9;
     --progress-bar-fill: #4caf50;
+    --progress-text-color: #2e7d32;
 }
 
 .progress-bar-pending {
-    --progress-bar-bg: #fff9c4;
-    --progress-bar-fill: #ffeb3b;
+    --progress-bar-bg: #fff8e1;
+    --progress-bar-fill: #ffc107;
+    --progress-text-color: #ff8f00;
 }
 
 .progress-bar-error {
     --progress-bar-bg: #ffebee;
     --progress-bar-fill: #f44336;
+    --progress-text-color: #c62828;
 }
 
 .progress-bar-paused {
-    --progress-bar-bg: #eeeeee;
+    --progress-bar-bg: #f5f5f5;
     --progress-bar-fill: #9e9e9e;
+    --progress-text-color: #616161;
+}
+
+/* Animación opcional para el progreso */
+@keyframes progress-animation {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 30px 0;
+    }
+}
+
+/* Media queries para responsividad */
+@media screen and (max-width: 480px) {
+    :root {
+        --progress-bar-height: 16px;
+        --progress-text-font-size: 12px;
+        --progress-container-padding: 10px;
+    }
+
+    .progress-container {
+        max-width: 100%;
+        margin: 10px auto;
+    }
 }
