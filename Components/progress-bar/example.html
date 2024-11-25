@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diews-Components - Example</title>
+    <link rel="stylesheet" href="./css/progressBar.main.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-container">
+        <label class="progress-label">Loading...</label>
+        <progress class="progress-bar progress-bar-pending" value="60" max="100"></progress>
+        <div class="progress-percentage">60%</div>
+    </div>
+    
+    <div class="progress-container">
+        <label class="progress-label">Completed</label>
+        <progress class="progress-bar progress-bar-complete" value="100" max="100"></progress>
+        <div class="progress-percentage">100%</div>
+    </div>
+    
+    <div class="progress-container">
+        <label class="progress-label">On Pause</label>
+        <progress class="progress-bar progress-bar-paused" value="30" max="100"></progress>
+        <div class="progress-percentage">30%</div>
+    </div>
+    
+    <div class="progress-container">
+        <label class="progress-label">Error</label>
+        <progress class="progress-bar progress-bar-error" value="40" max="100"></progress>
+        <div class="progress-percentage">40%</div>
+    </div>
+       
+
+</div>
+</body>
+</html>
