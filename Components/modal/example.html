@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diews-Components - Example</title>
+    <link rel="stylesheet" href="./css/modal.main.css">
+    <link rel="stylesheet" href="/Components/buttons/css/buttons.main.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+<input type="checkbox" id="modal-toggle" aria-label="Open Modal" />
+
+<div class="modal-overlay" aria-labelledby="modal-title" role="dialog">
+    <div class="modal">
+        <label class="modal__close-btn" for="modal-toggle" aria-label="Close Modal">&times;</label>
+        
+        <div class="modal__content">
+            <h2 class="modal__title" id="modal-title">Modal Title</h2>
+            <p class="modal__text">This is an improved modal with a better design, smoother animations, and enhanced accessibility. You can add any content here!</p>
+            <button class="btn btn--primary">Accept</button>
+            <button class="btn btn--secondary">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<label for="modal-toggle" class="btn btn--primary">Open Modal</label>
+
+
+
+</div>
+</body>
+</html>
