@@ -1,0 +1,77 @@
+:root {
+    --progress-bar-height: 20px;
+    --progress-bar-radius: 10px;
+    --progress-text-font-size: 14px;
+    --progress-container-padding: 12px;
+}
+
+.progress-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: var(--progress-container-padding);
+    text-align: center;
+    background-color: #fff;
+    border-radius: var(--progress-bar-radius);
+}
+
+.progress-label {
+    font-size: var(--progress-text-font-size);
+    color: var(--progress-text-color, #333);
+    font-weight: 400;
+    margin-bottom: 10px;
+    display: block;
+    letter-spacing: 0.5px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: var(--progress-bar-height);
+    border-radius: var(--progress-bar-radius);
+    background-color: var(--progress-bar-bg, #f1f1f1);
+    appearance: none;
+    transition: width 0.4s ease;
+}
+
+.progress-bar::-webkit-progress-bar {
+    background-color: var(--progress-bar-bg, #f1f1f1);
+    border-radius: var(--progress-bar-radius);
+}
+
+.progress-bar::-webkit-progress-value {
+    background-color: var(--progress-bar-fill, #6c7ae0);
+    border-radius: var(--progress-bar-radius);
+}
+
+.progress-bar::-moz-progress-bar {
+    background-color: var(--progress-bar-fill, #6c7ae0);
+    border-radius: var(--progress-bar-radius);
+}
+
+.progress-percentage {
+    margin-top: 8px;
+    font-size: var(--progress-text-font-size);
+    color: var(--progress-text-color, #333);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.progress-bar-complete {
+    --progress-bar-bg: #e0f7fa;
+    --progress-bar-fill: #4caf50;
+}
+
+.progress-bar-pending {
+    --progress-bar-bg: #fff9c4;
+    --progress-bar-fill: #ffeb3b;
+}
+
+.progress-bar-error {
+    --progress-bar-bg: #ffebee;
+    --progress-bar-fill: #f44336;
+}
+
+.progress-bar-paused {
+    --progress-bar-bg: #eeeeee;
+    --progress-bar-fill: #9e9e9e;
+}
