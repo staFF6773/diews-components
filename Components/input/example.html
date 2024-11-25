@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diews-Components - Example</title>
+    <link rel="stylesheet" href="./css/input.main.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 4rem;
+            gap: 4rem;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Input básico -->
+<div class="input__container">
+  <input type="text" class="input__field" placeholder=" ">
+  <label class="input__label">Correo electrónico</label>
+</div>
+
+<!-- Input con estado de error -->
+<div class="input__container" data-state="error">
+  <input type="text" class="input__field" placeholder=" ">
+  <label class="input__label">Correo electrónico</label>
+  <span class="input__message">El correo no es válido</span>
+</div>
+
+<!-- Input variante glass -->
+<div class="input__container" data-variant="glass">
+  <input type="text" class="input__field" placeholder=" ">
+  <label class="input__label">Correo electrónico</label>
+</div>
+
+<!-- Input tamaño grande -->
+<div class="input__container" data-size="lg">
+  <input type="text" class="input__field" placeholder=" ">
+  <label class="input__label">Correo electrónico</label>
+</div>
+</body>
+
+</html>
