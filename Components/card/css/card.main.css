@@ -1,0 +1,187 @@
+:root {
+    /* Colors */
+    --card--background: #ffffff;
+    --card--border-color: #e2e8f0;
+    --card--shadow-color: rgba(0, 0, 0, 0.1);
+    --card--text-color: #1a202c;
+    --card--text-color-secondary: #4a5568;
+
+    /* Spacing */
+    --card--padding: 1.5rem;
+    --card--border-radius: 0.5rem;
+    --card--gap: 1rem;
+    --card--image-height: 200px;
+    --card--image-fit: cover;
+
+    /* Typography */
+    --card--title-size: 1.25rem;
+    --card--subtitle-size: 0.875rem;
+    --card--text-size: 1rem;
+
+    /* Animations */
+    --card--transition-duration: 0.2s;
+    --card--scale-hover: 1.02;
+}
+
+.card {
+    background-color: var(--card--background);
+    border: 1px solid var(--card--border-color);
+    border-radius: var(--card--border-radius);
+    overflow: hidden;
+    transition: transform var(--card--transition-duration) ease,
+                box-shadow var(--card--transition-duration) ease;
+}
+
+.card:hover {
+    transform: scale(var(--card--scale-hover));
+    box-shadow: 0 6px 12px var(--card--shadow-color);
+}
+
+/* Imagen */
+.card__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: var(--card--image-height);
+    overflow: hidden;
+}
+
+.card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: var(--card--image-fit);
+    transition: transform var(--card--transition-duration) ease;
+}
+
+.card:hover .card__image {
+    transform: scale(1.05);
+}
+
+.card__image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+    opacity: 0;
+    transition: opacity var(--card--transition-duration) ease;
+}
+
+.card:hover .card__image-overlay {
+    opacity: 1;
+}
+
+/* Contenido */
+.card__body {
+    padding: var(--card--padding);
+}
+
+.card__header {
+    margin-bottom: var(--card--gap);
+}
+
+.card__title {
+    font-size: var(--card--title-size);
+    font-weight: 600;
+    color: var(--card--text-color);
+    margin: 0;
+}
+
+.card__subtitle {
+    font-size: var(--card--subtitle-size);
+    color: var(--card--text-color-secondary);
+    margin-top: 0.25rem;
+}
+
+.card__content {
+    font-size: var(--card--text-size);
+    color: var(--card--text-color);
+    line-height: 1.5;
+}
+
+.card__footer {
+    margin-top: var(--card--gap);
+    padding-top: var(--card--gap);
+    border-top: 1px solid var(--card--border-color);
+}
+
+/* Variantes */
+.card--flat {
+    box-shadow: none;
+}
+
+.card--compact {
+    --card--padding: 1rem;
+    --card--gap: 0.5rem;
+}
+
+.card--horizontal {
+    display: flex;
+    align-items: stretch;
+}
+
+.card--horizontal .card__image-wrapper {
+    width: 35%;
+    height: auto;
+}
+
+.card--horizontal .card__body {
+    flex: 1;
+}
+
+/* Tamaños */
+.card--small {
+    --card--image-height: 150px;
+    --card--title-size: 1rem;
+    --card--text-size: 0.875rem;
+}
+
+.card--large {
+    --card--image-height: 300px;
+    --card--title-size: 1.5rem;
+    --card--text-size: 1.125rem;
+}
+
+/* Estados */
+.card--loading {
+    position: relative;
+    overflow: hidden;
+    background: #f0f2f5;
+}
+
+.card--loading::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.08) 20%,
+        rgba(255, 255, 255, 0.2) 60%,
+        rgba(255, 255, 255, 0.08) 80%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    backdrop-filter: blur(5px);
+    transform: translateX(-100%);
+    animation: modernShimmer 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes modernShimmer {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
