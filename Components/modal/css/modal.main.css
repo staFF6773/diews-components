@@ -99,6 +99,14 @@ input[type="checkbox"]:checked + .modal-overlay .modal {
     padding-bottom: 15px;
 }
 
+.modal__image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+}
+
 .modal__text {
     margin-bottom: 20px;
 }
