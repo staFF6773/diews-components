@@ -1,0 +1,181 @@
+:root {
+    --color__primary: #3b82f6;
+    --color__secondary: #8b5cf6;
+    --color__success: #10b981;
+    --color__error: #ef4444;
+    --color__warning: #f59e0b;
+
+    --input__bg: #ffffff;
+    --input__border: #e0e0e0;
+    --input__border__hover: #9ca3af;
+    --input__border__focus: var(--color__primary);
+    --input__bg__disabled: #f3f4f6;
+
+    --text__primary: #1f2937;
+    --text__secondary: #6b7280;
+    --text__placeholder: #9ca3af;
+    --text__disabled: #9ca3af;
+
+    --spacing__xs: 0.25rem;
+    --spacing__sm: 0.5rem;
+    --spacing__md: 1rem;
+    --spacing__lg: 1.5rem;
+
+    --font__size__xs: 0.75rem;
+    --font__size__sm: 0.875rem;
+    --font__size__md: 1rem;
+    --font__size__lg: 1.125rem;
+
+    --border__radius__sm: 4px;
+    --border__radius__md: 8px;
+    --border__radius__lg: 12px;
+    --border__width: 2px;
+
+    --transition__fast: 0.2s ease;
+    --transition__normal: 0.3s ease;
+    --shadow__focus: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.input__container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: var(--spacing__lg);
+    font-family: system-ui, -apple-system, sans-serif;
+    width: 100%;
+}
+
+.input__wrapper {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 100%;
+}
+
+.input__field {
+    flex: 1;
+    min-width: 0;
+    padding: var(--spacing__md);
+    font-size: var(--font__size__md);
+    color: var(--text__primary);
+    border: var(--border__width) solid var(--input__border);
+    border-radius: var(--border__radius__md);
+    background-color: var(--input__bg);
+    transition: var(--transition__normal);
+    outline: none;
+}
+
+.input__field:hover {
+    border-color: var(--input__border__hover);
+}
+
+.input__field:focus {
+    border-color: var(--input__border__focus);
+    box-shadow: var(--shadow__focus);
+}
+
+.input__label {
+    position: absolute;
+    left: var(--spacing__md);
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--input__bg);
+    padding: 0 var(--spacing__xs);
+    color: var(--text__secondary);
+    transition: var(--transition__normal);
+    pointer-events: none;
+}
+
+.input__field:focus~.input__label,
+.input__field:not(:placeholder-shown)~.input__label {
+    top: 0;
+    font-size: var(--font__size__sm);
+    color: var(--input__border__focus);
+    font-weight: 500;
+}
+
+/* Estados */
+.input__container[data-state="error"] .input__field {
+    border-color: var(--color__error);
+}
+
+.input__container[data-state="success"] .input__field {
+    border-color: var(--color__success);
+}
+
+.input__container[data-state="warning"] .input__field {
+    border-color: var(--color__warning);
+}
+
+.input__message {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing__xs);
+    margin-top: var(--spacing__xs);
+    font-size: var(--font__size__sm);
+}
+
+.input__container[data-state="error"] .input__message {
+    color: var(--color__error);
+}
+
+.input__container[data-state="success"] .input__message {
+    color: var(--color__success);
+}
+
+.input__container[data-state="warning"] .input__message {
+    color: var(--color__warning);
+}
+
+/* Variantes */
+.input__container[data-variant="filled"] .input__field {
+    background-color: #f3f4f6;
+    border: none;
+}
+
+.input__container[data-variant="glass"] .input__field {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.input__container[data-variant="gradient"] .input__field:focus {
+    border-image: linear-gradient(45deg,
+            var(--color__primary),
+            var(--color__secondary)) 1;
+}
+
+.input__container[data-size="sm"] .input__field {
+    padding: var(--spacing__sm);
+    font-size: var(--font__size__sm);
+}
+
+.input__container[data-size="lg"] .input__field {
+    padding: var(--spacing__lg);
+    font-size: var(--font__size__lg);
+}
+
+.input__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: var(--spacing__lg);
+    height: var(--spacing__lg);
+}
+
+.input__icon--left {
+    left: var(--spacing__sm);
+}
+
+.input__icon--right {
+    right: var(--spacing__sm);
+}
+
+.input__field--with-icon-left {
+    padding-left: calc(var(--spacing__lg) + var(--spacing__md));
+}
+
+.input__field--with-icon-right {
+    padding-right: calc(var(--spacing__lg) + var(--spacing__md));
+}
