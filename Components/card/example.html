@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diews-Components - Example</title>
+    <link rel="stylesheet" href="./css/card.main.css">
+    <link rel="stylesheet" href="/Components/buttons/css/buttons.main.css">
+</head>
+
+<body>
+    <div class="cards-container">
+        <div class="card">
+            <div class="card__image-wrapper">
+                <img class="card__image" src="https://picsum.photos/400/300" alt="Imagen de ejemplo">
+                <div class="card__image-overlay"></div>
+            </div>
+            <div class="card__body">
+                <div class="card__header">
+                    <h2 class="card__title">Card Básica</h2>
+                    <div class="card__subtitle">Subtítulo de ejemplo</div>
+                </div>
+                <div class="card__content">
+                    <p>Esta es una card básica con todos los elementos: imagen, título, subtítulo y contenido.</p>
+                </div>
+                <div class="card__footer">
+                    <button class="btn btn--primary">Ver más</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card--compact">
+            <div class="card__image-wrapper">
+                <img class="card__image" src="https://picsum.photos/400/300" alt="Imagen de ejemplo">
+            </div>
+            <div class="card__body">
+                <div class="card__header">
+                    <h2 class="card__title">Card Compacta</h2>
+                </div>
+                <div class="card__content">
+                    <p>Versión más compacta con menos padding.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card--horizontal">
+            <div class="card__image-wrapper">
+                <img class="card__image" src="https://picsum.photos/400/300" alt="Imagen de ejemplo">
+            </div>
+            <div class="card__body">
+                <div class="card__header">
+                    <h2 class="card__title">Card Horizontal</h2>
+                    <div class="card__subtitle">Layout horizontal</div>
+                </div>
+                <div class="card__content">
+                    <p>Esta card utiliza un layout horizontal con la imagen a la izquierda.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card--small">
+            <div class="card__image-wrapper">
+                <img class="card__image" src="https://picsum.photos/400/300" alt="Imagen de ejemplo">
+            </div>
+            <div class="card__body">
+                <div class="card__header">
+                    <h2 class="card__title">Card Pequeña</h2>
+                </div>
+                <div class="card__content">
+                    <p>Versión más pequeña de la card.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card--large">
+            <div class="card__image-wrapper">
+                <img class="card__image" src="https://picsum.photos/400/300" alt="Imagen de ejemplo">
+            </div>
+            <div class="card__body">
+                <div class="card__header">
+                    <h2 class="card__title">Card Grande</h2>
+                    <div class="card__subtitle">Más espacio para contenido</div>
+                </div>
+                <div class="card__content">
+                    <p>Versión más grande con imagen más alta y texto más grande.</p>
+                </div>
+                <div class="card__footer">
+                    <button class="btn btn--primary">Ver más</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card--flat">
+            <div class="card__image-wrapper">
+                <img class="card__image" src="https://picsum.photos/400/300" alt="Imagen de ejemplo">
+            </div>
+            <div class="card__body">
+                <div class="card__header">
+                    <h2 class="card__title">Card Plana</h2>
+                </div>
+                <div class="card__content">
+                    <p>Versión sin sombras, solo con borde.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card--loading">
+            <div class="card__image-wrapper">
+                <img class="card__image" src="https://picsum.photos/400/300" alt="Imagen de ejemplo">
+            </div>
+            <div class="card__body">
+                <div class="card__header">
+                    <h2 class="card__title">Card Loading</h2>
+                </div>
+                <div class="card__content">
+                    <p>Estado de carga con animación.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+    </style>
+</body>
+
+</html>
