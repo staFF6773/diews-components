@@ -25,32 +25,56 @@
         }
     </style>
 </head>
-<body>
+<body>  
     <div class="progress-container">
-        <label class="progress-label">Loading...</label>
-        <progress class="progress-bar progress-bar-pending" value="60" max="100"></progress>
-        <div class="progress-percentage">60%</div>
+        <div class="progress-wrapper">
+            <div class="progress-header">
+                <span class="progress-label">Progreso Normal</span>
+                <span class="progress-percentage">75%</span>
+            </div>
+            <progress class="progress-bar" value="75" max="100"></progress>
+        </div>
     </div>
     
-    <div class="progress-container">
-        <label class="progress-label">Completed</label>
-        <progress class="progress-bar progress-bar-complete" value="100" max="100"></progress>
-        <div class="progress-percentage">100%</div>
+    <div class="progress-container progress-bar-complete">
+        <div class="progress-wrapper">
+            <div class="progress-header">
+                <span class="progress-label">Completado</span>
+                <span class="progress-percentage">100%</span>
+            </div>
+            <progress class="progress-bar" value="100" max="100"></progress>
+        </div>
     </div>
     
-    <div class="progress-container">
-        <label class="progress-label">On Pause</label>
-        <progress class="progress-bar progress-bar-paused" value="30" max="100"></progress>
-        <div class="progress-percentage">30%</div>
+    <div class="progress-container progress-bar-pending">
+        <div class="progress-wrapper">
+            <div class="progress-header">
+                <span class="progress-label">Pendiente</span>
+                <span class="progress-percentage">45%</span>
+            </div>
+            <progress class="progress-bar" value="45" max="100"></progress>
+        </div>
     </div>
     
-    <div class="progress-container">
-        <label class="progress-label">Error</label>
-        <progress class="progress-bar progress-bar-error" value="40" max="100"></progress>
-        <div class="progress-percentage">40%</div>
+    <div class="progress-container progress-bar-error">
+        <div class="progress-wrapper">
+            <div class="progress-header">
+                <span class="progress-label">Error</span>
+                <span class="progress-percentage">60%</span>
+            </div>
+            <progress class="progress-bar" value="60" max="100"></progress>
+        </div>
     </div>
-       
-
+    
+    <div class="progress-container progress-bar-paused">
+        <div class="progress-wrapper">
+            <div class="progress-header">
+                <span class="progress-label">Pausado</span>
+                <span class="progress-percentage">30%</span>
+            </div>
+            <progress class="progress-bar" value="30" max="100"></progress>
+        </div>
+    </div>
 </div>
 </body>
 </html>
