@@ -3,6 +3,9 @@
     --progress-bar-radius: 10px;
     --progress-text-font-size: 14px;
     --progress-container-padding: 12px;
+    --progress-bar-bg: #f1f1f1;
+    --progress-bar-fill: #6c7ae0;
+    --progress-text-color: #333;
 }
 
 .progress-container {
@@ -44,24 +47,40 @@
     width: 100%;
     height: var(--progress-bar-height);
     border-radius: var(--progress-bar-radius);
-    background-color: var(--progress-bar-bg, #f1f1f1);
+    background-color: var(--progress-bar-bg);
     appearance: none;
     transition: all 0.4s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+    background-size: 50px 50px;
+    animation: progress-animation 2s linear infinite;
+    pointer-events: none;
 }
 
 .progress-bar::-webkit-progress-bar {
-    background-color: var(--progress-bar-bg, #f1f1f1);
+    background-color: var(--progress-bar-fill);
     border-radius: var(--progress-bar-radius);
 }
 
 .progress-bar::-webkit-progress-value {
-    background-color: var(--progress-bar-fill, #6c7ae0);
+    background-color: var(--progress-bar-fill);
     border-radius: var(--progress-bar-radius);
     transition: all 0.4s ease;
 }
 
 .progress-bar::-moz-progress-bar {
-    background-color: var(--progress-bar-fill, #6c7ae0);
+    background-color: var(--progress-bar-fill);
     border-radius: var(--progress-bar-radius);
     transition: all 0.4s ease;
 }
@@ -98,18 +117,16 @@
     --progress-text-color: #616161;
 }
 
-/* Animación opcional para el progreso */
 @keyframes progress-animation {
     0% {
         background-position: 0 0;
     }
 
     100% {
-        background-position: 30px 0;
+        background-position: 50px 50px;
     }
 }
 
-/* Media queries para responsividad */
 @media screen and (max-width: 480px) {
     :root {
         --progress-bar-height: 16px;
